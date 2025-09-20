@@ -38,7 +38,7 @@ export const selectFilteredPhotos = (state) => {
     const photoCaption = photo.caption;
     const currentSearchTerm = selectSearchTerm(state);
 
-    return photoCaption.includes(currentSearchTerm);
+    return photoCaption.toLowerCase().includes(currentSearchTerm.toLowerCase());
   });
 
   return filteredPhotos;
